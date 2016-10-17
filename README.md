@@ -22,6 +22,14 @@ vagrant up
 
 This will take a while the first time it runs, as it needs to build the virtual machine from scratch. Once done it will then start it up in the background.
 
+### Host port
+
+By default port 27017 will be bound from the host to the guest to enable access to MongoDB from the host. If you wish to change this set an environment variable (`MONGOBOX_HOST_PORT`) to the port you wish to use. The easiest way to do this is when calling `vagrant up` itself.
+
+```bash
+MONGOBOX_HOST_PORT=27018 vagrant up
+```
+
 ### Caching
 
 If you intend to use Vagrant and have a number of different boxes, install the Vagrant plugin [vagrant-cachier](http://fgrehm.viewdocs.io/vagrant-cachier/). This project takes advantage of it, speeding up future builds of new Vagrant boxes.
